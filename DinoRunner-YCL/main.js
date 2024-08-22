@@ -107,7 +107,7 @@ function create() {
   // Add event listener to the start button
   document.getElementById("start-button").addEventListener("click", () => {
     document.getElementById("start-button").style.display = "none";
-    document.getElementById("dino-image").style.display = "no";
+    document.getElementById("dino-image").style.display = "none";
     document.getElementById("game-container").style.display = "block";
     this.scene.resume();
   });
