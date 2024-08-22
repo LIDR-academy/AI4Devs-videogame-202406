@@ -1,29 +1,53 @@
-1. Give me the requirements for a clone of Dino Runner google video game I need:
+# Dino Runner Clone Requirements
 
-   1. Game Review
-   1. Technical Requirements: give me the best framework library HTML5/CSS/JS browser platform
-   1. Game Components
-   1. Functionality
-   1. Game levels change
+## 1. Game Overview
 
-2. You are an expert video game developer. your task is to create a clone of Dino Runner video game using the requirements of the game_overview.md file. Add the library of Phaser.js as the framework using the CDN import. Take in account to split the code according to the code, for styles use main.css file, for js files use main.js file, all the html code should be in index.html file.
+Provide a detailed review of the Dino Runner game, including its main features and gameplay mechanics.
 
-3. @phaser Add to the gamer the jump movement with the keyboard could be up arrow or space. Additionally allow the world to move and add random cactus to it.
+## 2. Technical Requirements
 
-4. Update the code to match with the dino and the ground sprite size is 45x56, the cactus sprite 24x56
-5. the ground sprite is too small, it should be repeat it in the x axis until the border of the container
-6. Change the container for the next specifications: width: 600px; height: 150px, background color white for the canvas.
-7. Fix the cactus to fit the same ground as the dino, currently is below. Also the cactus appears and stay in the same x axis, the cactus should move with the world
-8. The dinosaur is jumping higher than the height of the container, fix that
-9. increase the container height to be 400px and apply all the physics logic and code for that
-10. Add the sprite cloud.png to be part of the landscape, should be added to the world as random landscape, it means should star randomly positioned after 150 px height, and should move with the world in the x axis and then disappear.
-11. The sprite cloud should start from the beginning and move with the world in the x axis, the y axis should be the same. The current behavior is the clouds are falling, because of gravity, fix that.
-12. In the function "this.clouds.children.iterate(function (cloud) {" I am getting this error in the console Cannot read properties of undefined (reading 'x')
-13. As an expert developer, your task is to enhance the game by adding an infinite number of levels. Each level should progressively increase in difficulty. Implement a scoring system that tracks the player's progress. Additionally, as the game speed increases with each level, ensure that the dino's jump velocity scales accordingly to maintain smooth and balanced gameplay.
-14. The current score and level display are static and need to be dynamic. Update the score so that it increases based on how long the dino survives. The level should automatically increase every 15 seconds, gradually increasing the game's speed and the number of cacti. Ensure the scoreboard visibly updates in real-time to reflect the current score and level.
-15. The dino's jump height is incorrectly increasing along the y-axis when the level is increasing. Instead of jumping higher, the dino should maintain the same height but complete the jump more quickly as the game progresses. Please adjust the code to ensure the jump speed increases without affecting the jump height.
-16. As a gamer developer expert bring the best free fonts that are used for old games.
-17. Add the Google Fonts - Press Start 2P font to the projec tand apply to all the text
-18. Add the font size to the canvas
-19. As a game developer expert, your task is to add the logic for a Start button to initiate the game. Additionally, implement a Game Over screen that displays the text 'Game Over,' along with the player's final score. Below the score, add a button labeled Restart that restarts the game when clicked. Use the 'Press Start 2P' font style for all new text, including the 'Game Over' message and button labels.
-20. Update the Restart button to have the same style as the Start button. Modify the game logic so that after the user clicks the Restart button, the game starts immediately without requiring the user to press the Start button again
+- Identify the best framework/library for HTML5/CSS/JS browser platform.
+- Use Phaser.js as the framework, imported via CDN.
+
+## 3. Game Components
+
+- List and describe the main components of the game.
+
+## 4. Functionality
+
+- Detail the core functionalities required for the game.
+
+## 5. Game Levels
+
+- Explain how the game levels should change and progress.
+
+## 6. Development Instructions
+
+As an expert video game developer, your task is to create a clone of the Dino Runner video game using the requirements from the `game_overview.md` file. Follow these guidelines:
+
+1. **Framework**: Use Phaser.js as the framework, imported via CDN.
+2. **Code Structure**:
+   - HTML code should be in `index.html`.
+   - CSS styles should be in `main.css`.
+   - JavaScript code should be in `main.js`.
+
+## 7. Specific Features and Fixes
+
+1. **Jump Movement**: Add jump movement using the up arrow or space key. Allow the world to move and add random cacti.
+2. **Sprite Sizes**: Update the code to match the dino and ground sprite size (45x56) and the cactus sprite size (24x56).
+3. **Ground Sprite**: Ensure the ground sprite repeats along the x-axis until the border of the container.
+4. **Container Specifications**: Set the container to `width: 600px; height: 150px; background-color: white`.
+5. **Cactus Positioning**: Fix the cactus to align with the ground and move with the world.
+6. **Jump Height**: Ensure the dinosaur does not jump higher than the container height.
+7. **Container Height**: Increase the container height to 400px and adjust the physics logic accordingly.
+8. **Cloud Sprite**: Add the `cloud.png` sprite to the landscape, starting randomly after 150px height, moving with the world along the x-axis, and disappearing.
+9. **Cloud Behavior**: Fix the cloud behavior to prevent it from falling due to gravity.
+10. **Error Handling**: Resolve the error in the function `this.clouds.children.iterate(function (cloud) {` where `Cannot read properties of undefined (reading 'x')`.
+
+## 8. Game Enhancements
+
+1. **Infinite Levels**: Add infinite levels with progressively increasing difficulty. Implement a scoring system that tracks the player's progress. Ensure the dino's jump velocity scales with the game speed.
+2. **Dynamic Score and Level Display**: Update the score to increase based on survival time. Automatically increase the level every 15 seconds, increasing game speed and the number of cacti. Ensure the scoreboard updates in real-time.
+3. **Jump Speed**: Adjust the code to ensure the dino's jump speed increases without affecting the jump height.
+4. **Fonts**: Use the best free fonts for old games. Add the Google Fonts - Press Start 2P font to the project and apply it to all text.
+5. **Start and Restart Buttons**: Add a Start button to initiate the game. Implement a Game Over screen displaying 'Game Over' and the player's final score, with a Restart button to restart the game. Use the 'Press Start 2P' font style for all new text. Ensure the Restart button has the same style as the Start button and modify the game logic to start immediately after clicking Restart.
