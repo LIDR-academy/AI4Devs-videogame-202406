@@ -7,6 +7,7 @@ class PreloadScene extends Phaser.Scene {
         this.load.image("tiles", "assets/images/tiles.png");
         this.load.tilemapTiledJSON("map", "assets/tilemaps/map.json");
         this.load.image("car", "assets/images/car.png");
+        this.load.image("enemy", "assets/images/enemy.png"); // Cargar el asset del enemigo
     }
 
     create() {
@@ -87,6 +88,14 @@ class GameScene extends Phaser.Scene {
 
         // Añadir restricción de movimiento al suelo
         this.groundTiles = groundLayer.filterTiles((tile) => tile.index === 3);
+
+        // Crear enemigos
+        this.enemies = this.physics.add.group();
+        this.createEnemies(4); // Crear 4 enemigos
+
+        // Configurar colisiones entre el jugador y los enemigos
+        this.physics.add.collider(this.player, this.enemies, this.handlePlayerEnemyCollision, null, this);
+        this.physics.add.collider(this.enemies, wallsLayer, this.handleEnemyWallCollision, null, this);
     }
 
     update() {
@@ -125,6 +134,65 @@ class GameScene extends Phaser.Scene {
         } else {
             this.player.setVelocity(0, 0);
         }
+
+        // Actualizar el movimiento de los enemigos
+        this.enemies.getChildren().forEach((enemy) => {
+            this.moveEnemy(enemy);
+        });
+    }
+
+    createEnemies(count) {
+        for (let i = 0; i < count; i++) {
+            const enemyStartPosition = this.findEnemyStartPosition();
+            const enemy = this.enemies.create(enemyStartPosition.x, enemyStartPosition.y, "enemy");
+            enemy.setScale(0.05);
+            enemy.setCollideWorldBounds(true);
+            enemy.setBounce(1);
+            this.setRandomDirection(enemy);
+        }
+    }
+
+    findEnemyStartPosition() {
+        const groundTiles = this.groundTiles;
+        if (groundTiles.length === 0) {
+            console.warn("No se encontraron tiles de suelo. Usando una posición predeterminada.");
+            return { x: 100, y: 100 };
+        }
+        const randomTile = Phaser.Utils.Array.GetRandom(groundTiles);
+        return {
+            x: randomTile.pixelX + randomTile.width / 2,
+            y: randomTile.pixelY + randomTile.height / 2,
+        };
+    }
+
+    setRandomDirection(enemy) {
+        const directions = [
+            { angle: 0, velocityX: 0, velocityY: -100 }, // Up
+            { angle: 90, velocityX: 100, velocityY: 0 }, // Right
+            { angle: 180, velocityX: 0, velocityY: 100 }, // Down
+            { angle: -90, velocityX: -100, velocityY: 0 }, // Left
+        ];
+        const direction = Phaser.Utils.Array.GetRandom(directions);
+        enemy.setAngle(direction.angle);
+        enemy.setVelocity(direction.velocityX, direction.velocityY);
+    }
+
+    moveEnemy(enemy) {
+        const newX = enemy.x + (enemy.body.velocity.x * this.game.loop.delta) / 1000;
+        const newY = enemy.y + (enemy.body.velocity.y * this.game.loop.delta) / 1000;
+
+        if (!this.isOnGround(newX, newY)) {
+            this.setRandomDirection(enemy);
+        }
+    }
+
+    handlePlayerEnemyCollision(player, enemy) {
+        this.scene.start("GameOverScene");
+    }
+
+    handleEnemyWallCollision(enemy, wall) {
+        // Cambiar a una nueva dirección aleatoria al chocar con una pared
+        this.setRandomDirection(enemy);
     }
 
     findPlayerStartPosition(groundLayer) {

@@ -124,3 +124,29 @@ No sé si tienen alguna relación ambos errores.
 ## Prompt 19
 
 Parece que el problema esta en el map.json, al parecer el Walls y Ground, entiendo que es una matriz de 30 por 30 elementos en el data @map.json , pero parece que 29 x 30 o algo así. Lo puedes verificar?
+
+## Prompt 20
+
+Ahora que tengo la pista funcionando y el automovil del jugador funcionando, necesito agregar a los enemigos. Al igual que en el juego original, los enemigos son otros vehiculos (assets/images/enemy.png) que podrían ser dos o mas vehículos que se mueven de forma aleatoria en la pista y de los cuales debo escapar.
+
+## Prompt 21
+
+Los enemigos aparecen en el juego, pero se mueven por cualquer parte y siguen el camino trazado en el mapa.
+
+## Prompt 22
+
+Para mover los autos enemigos podrías simplemente emular que el auto se mueve como se fuera con el teclado y que se mueva en un dirección (igual que el del jugador) y que cambie de dirección cuando choque con un muro?
+
+## Prompt 23
+
+En que parte del codigo se implementa que el vehiculo del jugador solo siga el camino del GroundLayer?
+
+## Prompt 24
+
+Creo que esto ultimo es lo que falta a los enemigos, ya que siguen moviendose por cualquier parte muro o piso.
+
+## Prompt 25
+
+Ahora funciona mejor. Deberías implementar algo similiar a lo que haces con el vehiculo del jugador para que aparezca en lugares random del mapa pero que no sea en la pared, ya que algunos enemigos quedan atrapados.
+
+También subir el numero de enemigos a 4?
