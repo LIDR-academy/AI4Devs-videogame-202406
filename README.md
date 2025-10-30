@@ -1,3 +1,31 @@
+# EN
+# Video game
+
+As a final exercise in the introduction, use what you've learned to create a video game using HTML, CSS, and JavaScript.
+
+For reference, the development of a Snake game has been provided, but you are free to choose any other game concept that interests you.
+
+## Instructions
+
+1. **Choose a game concept:** It can be any type of game you are interested in developing, from a platform game to a puzzle or strategy game.
+
+2. **Create the necessary files:** Inside the folder with your game name and initials (for example, `yourGameName-Initials`), add all the necessary files for your game, including HTML, CSS, and JavaScript. If your game requires images or other resources, be sure to include them as well.
+
+3. **Develop the game:** Use a chatbot, like ChatGPT or Gemini, to create all the code. HTML to structure your game, CSS for styling, and JavaScript for game logic. Make sure your game is interactive and works correctly in web browsers.
+
+4. **Document your process:** In a `prompts.md` file within the same folder, include the prompts you used. Also, if you'd like, describe your game's development process, including any challenges you faced and how you overcame them.
+
+5. **Test your game:** Before finalizing, test your game in different browsers to ensure it works correctly in all of them. Fix any bugs you find during testing with more prompts.
+
+6. **Make a pull request:** Once your game is complete and tested, make a pull request to include your game in the repository. Be sure to include a brief description of your game, how it plays, and any relevant details you'd like to highlight in the pull request comment.
+
+## Example: Snake Game
+
+To get an idea of ​​how to structure your project, you can refer to the Snake game we developed as an example. Find the necessary files and documentation in the `snake-EHS` folder.
+
+We look forward to seeing your creativity in action and playing the amazing games you create!
+
+# ES
 # Videojuego
 
 Como ejercicio final de la introducción, usa lo aprendido para crear un **videojuego** con HTML, CSS y JavaScript.
