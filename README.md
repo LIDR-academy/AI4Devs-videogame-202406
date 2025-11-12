@@ -1,5 +1,4 @@
-# EN
-# Video game
+# Video game  | EN
 
 As a final exercise in the introduction, use what you've learned to create a video game using HTML, CSS, and JavaScript.
 
@@ -25,8 +24,7 @@ To get an idea of ​​how to structure your project, you can refer to the Snak
 
 We look forward to seeing your creativity in action and playing the amazing games you create!
 
-# ES
-# Videojuego
+# Videojuego  | ES
 
 Como ejercicio final de la introducción, usa lo aprendido para crear un **videojuego** con HTML, CSS y JavaScript.
 
